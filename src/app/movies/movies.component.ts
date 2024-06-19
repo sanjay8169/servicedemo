@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MovieservicesService } from '../movieservices.service';
 
 @Component({
   selector: 'app-movies',
@@ -9,4 +10,19 @@ import { Component } from '@angular/core';
 })
 export class MoviesComponent {
 
+  constructor(private ms : MovieservicesService ){
+
+  }
+
+  movies : any;
+
+  ngOnInit(){
+    this.getmovies();
+  }
+
+  getmovies():any{
+    return this.ms.getmovies().subscribe((data:string[])=>{
+      this.movies = data;
+    })
+  }
 }

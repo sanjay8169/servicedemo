@@ -33,7 +33,6 @@ constructor(private missionClient : HttpClient) { }
   url : string = "http://localhost:3000/missions";
 
  getmissions():any {  
-  this.missionClient.get(this.url);
   return this.missionClient.get(this.url);
  }
 

@@ -18,10 +18,13 @@ export class SpidermanComponent implements OnInit{
 
   ngOnInit():void {
     this.getmissions();
+    this.missionService.missionPublissor.subscribe((data)=> 
+      this.getmissions()
+    )
   }
 
   getmissions():void{
-    this.missionService.getmissions().subscribe((data) => {
+    this.missionService.getmissions().subscribe((data : any) => {
 
       this.missions = data;
      })

@@ -33,9 +33,13 @@ export class IronmanComponent {
     }
    this.missionService.addmissions(mission).subscribe((b) =>
     {
-      b.next(mission)
+      
     }
+    
   )
+
+  form.value.id = "";
+  form.value.mission = "";
   
   }
 } 
